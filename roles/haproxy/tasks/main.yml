@@ -1,0 +1,9 @@
+- name: Install haproxy
+  apt: 
+    name: haproxy
+
+- name: Start haproxy
+  service:
+    name: haproxy
+    enabled: yes
+    state: restarted
