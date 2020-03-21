@@ -5,7 +5,7 @@
   become_method: sudo
 
   vars_files:
-    - /vars/main.yml
+    - vars/main.yml
 
   roles:
     - { role: role_common, tags: "role_common"}  
