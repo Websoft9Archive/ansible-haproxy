@@ -1,14 +1,5 @@
-- name: Install haproxy
-  apt: 
-    name: haproxy
-  when: ansible_distribution == 'Ubuntu'
+- include: "{{ansible_os_family}}.yml"
 
-- name: Install haproxy
-  yum: 
-    name: haproxy
-  when: ansible_distribution == 'CentOS'
-
-  
 - name: Start haproxy
   service:
     name: haproxy

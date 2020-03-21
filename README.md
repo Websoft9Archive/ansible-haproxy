@@ -1,7 +1,7 @@
 
 # haproxy 自动化安装与部署
 
-本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [haproxy](http://www.haproxy.org/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 haproxy，让原本复杂的安装过程变得没有任何技术门槛。  
+本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [HAProxy](http://www.haproxy.org/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 haproxy，让原本复杂的安装过程变得没有任何技术门槛。  
 
 本项目是开源项目，采用 LGPL3.0 开源协议。
 
@@ -11,7 +11,7 @@
 
 | 条件       | 详情       | 备注  |
 | ------------ | ------------ | ----- |
-| 操作系统       | Ubuntu16.04  Ubuntu18.04     |  可选  |
+| 操作系统       | CentOS7.x, Ubuntu18.04, Amazon Linux2 |  可选  |
 | 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 | 可选 |
 | 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
 | 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
@@ -19,13 +19,13 @@
 
 ## 组件
 
-包含的核心组件为：haproxy
+包含的核心组件为：HAProxy
 
 更多请见[参数表](/docs/zh/stack-components.md)
 
-## 本项目安装的是 haproxy 最新版吗？
+## 本项目安装的是 HAProxy 最新版吗？
 
-本项目采用 APT 进行安装，官方会在安装脚本中对小版本进行控制，即每一次安装均可保证为 haproxy 官方发布的最新稳定版。
+本项目采用 apt/yum 进行安装，官方会在安装脚本中版本进行控制，即每一次安装均可保证为 HAProxy 官方发布的最新稳定版。  
 
 我们会定期检查版本的准确性，以保证用户可以顺利安装。
 
@@ -44,7 +44,7 @@ wget -N https://raw.githubusercontent.com/Websoft9/linux/master/ansible_script/i
 1. 操作不慎或网络发生变化，可能会导致SSH连接被中断，安装就会失败，此时请重新安装
 2. 安装缓慢、停滞不前或无故中断，主要是网络不通（或网速太慢）导致的下载问题，此时请重新安装
 
-多种原因导致无法顺利安装，请使用我们在公有云上发布的 [haproxy 镜像](https://apps.websoft9.com/haproxy) 的部署方式
+多种原因导致无法顺利安装，请使用我们在公有云上发布的 [HAProxy 镜像](https://apps.websoft9.com/haproxy) 的部署方式
 
 ## 文档
 
