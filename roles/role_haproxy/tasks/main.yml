@@ -1,0 +1,12 @@
+- include: "{{ansible_os_family}}.yml"
+
+- name: Start haproxy
+  service:
+    name: haproxy
+    enabled: yes
+    state: restarted
+
+- name: Get Version
+  shell: haproxy -v
+  register: haproxy_ver
+  notify: haproxy version

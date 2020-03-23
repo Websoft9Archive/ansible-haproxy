@@ -1,5 +1,5 @@
 # 核心任务
-- name: haproxy
+- name: HAProxy
   hosts: all
   become: yes
   become_method: sudo
@@ -10,6 +10,6 @@
   roles:
     - { role: role_common, tags: "role_common"}  
     - { role: role_cloud, tags: "role_cloud" }
-    - { role: haproxy, tags: "haproxy"}
+    - { role: role_haproxy, tags: "role_haproxy"}
     - { role: role_preend, tags: "preend" }
     - { role: role_end, tags: "role_end" }

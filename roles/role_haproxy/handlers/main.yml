@@ -1,0 +1,3 @@
+- name: haproxy version
+  debug:
+    var: haproxy_ver
