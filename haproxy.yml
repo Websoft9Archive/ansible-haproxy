@@ -10,6 +10,6 @@
     - { role: role_common, tags: "role_common"}  
     - { role: role_cloud, tags: "role_cloud" }
     - { role: role_haproxy, tags: "role_haproxy"}
-    - { role: role_haproxy, tags: "role_init_password"}
+    - { role: role_init_password, tags: "role_init_password"}
     - { role: role_preend, tags: "preend" }
     - { role: role_end, tags: "role_end" }
