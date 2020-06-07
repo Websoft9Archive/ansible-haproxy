@@ -1,0 +1,7 @@
+init_application:
+  haproxy:
+    username: admin
+    password: "123456"
+    service_before: haproxy.service
+    config_paths: 
+      - /data/wwwroot/wordpress/wp-config.php
