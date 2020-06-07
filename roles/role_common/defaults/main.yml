@@ -1,5 +1,0 @@
-region: "0"
-
-#Control installation more components
-common_install_python_modules: True
-common_install_components: True
