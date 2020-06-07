@@ -10,33 +10,12 @@ HAProxy 预装包包含 HAProxy 运行所需一序列支撑软件（简称为“
 
 ### HAProxy Community
 
-HAProxy 安装目录： */data/haproxy*  
-HAProxy 日志目录： */data/logs/haproxy*  
+HAProxy 配置文件： */etc/haproxy/haproxy.cfg*  
+HAProxy 日志目录： */var/log/haproxy.log*  
 
-/etc/haproxy
-/etc/haproxy/haproxy.cfg
-/etc/logrotate.d/haproxy
-/etc/sysconfig/haproxy
-/usr/bin/halog
-/usr/bin/iprange
-/usr/lib/systemd/system/haproxy.service
-/usr/sbin/haproxy
-/usr/sbin/haproxy-systemd-wrapper
+### 其他
 
-
-### Nginx
-
-Nginx 虚拟主机配置文件：*/etc/nginx/conf.d/default.conf*  
-Nginx 主配置文件： */etc/nginx/nginx.conf*  
-Nginx 日志文件： */var/log/nginx*  
-Nginx 伪静态规则目录： */etc/nginx/conf.d/rewrite*
-
-### MYSQL
-
-MySQL 安装路径: */usr/local/mysql*  
-MySQL 数据文件 */data/mysql*  
-MySQL 配置文件: */etc/my.cnf*    
-MySQL 可视化管理地址: *http://服务器公网IP/phpmyadmin*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
+暂无
 
 ## 端口号
 
@@ -46,9 +25,8 @@ MySQL 可视化管理地址: *http://服务器公网IP/phpmyadmin*，用户名�
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
-| HTTP | 15672 | 通过 HTTP 访问 HAProxy 控制台 | 可选 |
-| TCP | 5672 | epmd | 可选 |
-| TCP | 55672 | Erlang distribution | 可选 |
+| TCP | 1080 | 通过 HTTP 访问 HAProxy  Statistics Report | 可选 |
+| TCP | 5000 | for  HAProxy  | 可选 |
 
 ## 版本号
 
@@ -61,19 +39,6 @@ sudo cat /data/logs/install_version.txt
 # Linux Version
 lsb_release -a
 
-# Nginx  Version
-nginx -V
-
-# Java version
-java -v
-
-# Docker Version
-docker -v
-
-# erlang  Version
-yum info erlang
-apt show erlang
-
 # HAProxy version
-haproxyctl status | grep HAProxy*
+haproxy -v
 ```

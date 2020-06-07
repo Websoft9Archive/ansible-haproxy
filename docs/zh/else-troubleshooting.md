@@ -6,20 +6,22 @@
 
 #### 如何查看错误日志？
 
-日志文件路径为：`/data/logs`。检索关键词 **Failed** 或者 **error** 查看错误
+日志文件路径为：`/var/logs/haproxy`。检索关键词 **Failed** 或者 **error** 查看错误
 
 #### HAProxy服务无法启动？
 
-1. 以调试模式运行`haproxy-server console`，便可以查看启动状态和错误
-   ```
-   haproxy-server console
-   ```
-2. 打开日志文件：*/data/logs/haproxy-server*，检索 **failed** 关键词，分析错误原因
+服务无法启动最常见的问题包括：磁盘空间不足，内存不足，配置文件错误。  
+建议先通过命令进行排查  
 
+```shell
+# 查看磁盘空间
+df -lh
 
-#### 在Chrome下修改密码后报错？
+# 查看内存使用
+free -lh
 
-这个并不是服务器端的问题，只要更新浏览器即可。
-
-![chrome error of HAProxy](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-chromeerror-websoft9.png)
+# 查看数据库状态和日志
+systemctl status haproxy
+journalctl -u haproxy
+```
 

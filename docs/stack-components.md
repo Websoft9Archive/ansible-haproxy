@@ -6,22 +6,12 @@ The HAProxy deployment package contains a sequence software (referred to as "com
 
 ### HAProxy
 
-HAProxy installation directory:  */data/haproxy*  
-HAProxy logs directory:  */data/logs/haproxy*  
+HAProxy configuration file: */etc/haproxy/haproxy.cfg*  
+HAProxy logs directory: */var/log/haproxy.log*  
 
-### Nginx
+### Other
 
-Nginx vhost configuration file: */etc/nginx/conf.d/default.conf*    
-Nginx main configuration file: */etc/nginx/nginx.conf*   
-Nginx logs file: */var/log/nginx*  
-Nginx rewrite rules directory: */etc/nginx/conf.d/rewrite* 
-
-### MYSQL
-
-MySQL installation directory: */usr/local/mysql*  
-MySQL data directory: */data/mysql*  
-MySQL configuration file: */etc/my.cnf*    
-MySQL Web Management URL: *http://Internet IP/9panel*, get credential from [Username and Password](/stack-accounts.md)
+No other components
 
 ## Ports
 
@@ -31,9 +21,8 @@ You can run the cmd `netstat -tunlp` to list all used ports, and we list the fol
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
-| HTTP | 8161 | HTTP requests for HAProxy Console| Required |
-| HTTPS | 5672 | epmd | Optional |
-| TCP | 55672 | Erlang distribution | Optional |
+| TCP | 1080 | HTTP requests for HAProxy  Statistics Report | Optional |
+| TCP | 5000 | for  HAProxy  | Optional |
 
 
 ## Version
@@ -47,19 +36,6 @@ sudo cat /data/logs/install_version.txt
 # Linux Version
 lsb_release -a
 
-# Nginx  Version
-nginx -V
-
-# Java version
-java -v
-
-# Docker Version
-docker -v
-
-# erlang  Version
-yum info erlang
-apt show erlang
-
 # HAProxy version
-haproxyctl status | grep HAProxy*
+haproxy -v
 ```

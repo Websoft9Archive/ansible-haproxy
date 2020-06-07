@@ -16,7 +16,6 @@ module.exports = [
     title: '实践指南',
     collapsable: false,
     children: [
-      '/zh/solution-smtp',
       '/zh/solution-https',
       '/zh/solution-cli',
       '/zh/solution-backup',
@@ -30,8 +29,6 @@ module.exports = [
     collapsable: false,
     children: [
       '/zh/admin-services',
-      '/zh/admin-mysql',
-      ['https://support.websoft9.com/docs/linux/zh/lang-erlang.html','Erlang'],
       ['https://support.websoft9.com/docs/linux/zh/admin-practices.html','Linux'],
     ]
   },

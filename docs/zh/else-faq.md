@@ -1,41 +1,26 @@
 # FAQ
 
-#### 如何以调试模式启动HAProxy服务？
+#### 本部署方案采用的那种安装方式安装HAProxy？
 
-```
-systemctl stop haproxy-server
-haproxy-server console
-```
+yum/apt 安装方式
 
 #### 是否可以通过命令行修改HAProxy后台密码？
 
-可以，`haproxyctl change_password  admin newpassword`
+可以，修改配置文件`/etc/haproxy/haproxy.cfg`
 
 #### 如果没有域名是否可以部署 HAProxy？
 
-#### 数据库 root 用户对应的密码是多少？
+可以
 
-密码存放在服务器相关文件中：`/credentials/password.txt`
+#### 是否有可视化的管理工具？
 
-可以，访问`http://服务器公网IP` 即可
-
-#### 是否有可视化的数据库管理工具？
-
-有，内置phpMyAdmin，访问地址：*http://服务器公网IP/phpmyadmin*
-
-#### 如何禁止外界访问phpMyAdmin？
-
-连接服务器，编辑 [phpMyAdmin 配置文件](/zh/stack-components.md#phpmyadmin)，将其中的 `Require all granted` 更改为 `Require ip 192.160.1.0`，然后重启 Apache 服务
-
-#### 是否可以修改HAProxy的源码路径？
-
-不可以
+默认开启 HAProxy Statistics Report 可视化界面，访问：*http://Internet IP:1080/haproxy* 即可
 
 #### 如何修改上传的文件权限?
 
 ```shell
 # 拥有者
-chown -R apache.apache /data/wwwroot/
+chown -R haproxy.haproxy /data/wwwroot/
 # 读写执行权限
 find /data/wwwroot/ -type d -exec chmod 750 {} \;
 find /data/wwwroot/ -type f -exec chmod 640 {} \;

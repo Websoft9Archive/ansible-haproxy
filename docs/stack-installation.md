@@ -10,21 +10,31 @@ If you have completed the HAProxy deployment on Cloud Platform, the following st
 
 ## HAProxy Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://DNS:15672* or *http://Internet IP:15672*, you will enter installation wizard of HAProxy
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-login-websoft9.png)
+1. Using local Chrome or Firefox to visit the URL *http://DNS:1080* or *http://Internet IP:1080*
 
-2. Log in to HAProxy web console([Don't have password?](/stack-accounts.md#haproxy))  
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-bk-websoft9.png)
+2. Input username and password([Don't known password?](/stack-accounts.md#haproxy)), go to **HAProxy Statistics Report** console
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-statsgui-websoft9.png)
 
-3. Set you new password from: 【Users】>【Admin】>【Permissions】>【Update this user】
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-pw-websoft9.png)
+3. You can modify the password by modify the configuration of HAProxy */etc/haproxy/haproxy.cfg*  
+   `stats auth admin:***** ` is username and password
 
-> More useful HAProxy guide, please refer to [HAProxy Documentation](https://www.haproxy.com/documentation.html)
+   ```
+   listen admin_stats 
+    bind *:1080 
+    mode http 
+    maxconn 10 
+    stats refresh 10s 
+    stats uri /haproxy 
+    stats realm Haproxy 
+    stats auth admin:*****
+    stats hide-version 
+    stats admin if TRUE
+   ```
+
+> More useful HAProxy guide, please refer to [HAProxy Documentation](http://cbonte.github.io/haproxy-dconv/)
 
 ## Q&A
 
 #### I can't visit the start page of HAProxy?
 
-Your TCP:15672 of Security Group Rules is not allowed so there no response from Chrome or Firefox
-
-#### HAProxy service can't start? 
+Your TCP:1080 of Security Group Rules is not allowed so there no response from Chrome or Firefox

@@ -24,4 +24,4 @@ yum update -y
 
 ## HAProxy升级
 
-详情参考官方升级文档：[Upgrading HAProxy](https://www.haproxy.com/upgrade.html)
+如果yum/apt更新后的版本无法满足您需求，请通过[源码编译安装](https://github.com/haproxy/haproxy/blob/master/INSTALL)您所需的版本

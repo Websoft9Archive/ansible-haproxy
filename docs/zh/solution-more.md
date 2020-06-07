@@ -2,27 +2,37 @@
 
 下面每一个方案，都经过实践证明行之有效，希望能够对你有帮助
 
-## 配置
+## 开启监控
 
-参考官方方案：https://www.haproxy.com/configure.html
+使用[Websoft9](https://www.websoft9.com)提供的HAProxy部署方案，默认已经设置HAProxy Statistics Report，只需直接访问即可：*http://服务器公网IP:1080/haproxy*
 
-## 域名绑定
+## 开启HAProxy日志
 
-当服务器上只有一个网站时，不做域名绑定也可以访问网站。但从安全和维护考量，**域名绑定**不可省却。
+默认已经开启，查看 `/etc/rsyslog.conf` 配置文件了解详情
 
-以示例网站为例，域名绑定操作步骤如下：
+## 高可用性
 
-1. 确保域名解析已经生效  
-2. 使用 SFTP 工具登录云服务器
-2. 修改 [Nginx虚拟机主机配置文件](/zh/stack-components.md#nginx)，将其中的 **server_name** 项的值修改为你的域名
-   ```text
-   server
-   {
-   listen 80;
-   server_name www.example.com;  # 此处修改为你的域名
-   index index.html index.htm index.php;
-   root  /data/wwwroot/www.example.com;
-   ...
-   }
-   ```
-3. 保存配置文件，重启 [Nginx 服务](/zh/admin-services.md#nginx)
+通过部署 Keepalived 实现 HAProxy的高可用性
+
+## 集群配置
+
+只需在配置文件中添加需要管理的集群服务器信息即可启用HAProxy集群，范例如下：
+
+```
+# [HTTP Site Configuration]
+listen  http_web 192.168.10.10:80
+        mode http
+        balance roundrobin  # Load Balancing algorithm
+        option httpchk
+        option forwardfor
+        server server1 192.168.10.100:80 weight 1 maxconn 512 check
+        server server2 192.168.10.101:80 weight 1 maxconn 512 check
+
+# [HTTPS Site Configuration]
+listen  https_web 192.168.10.10:443
+        mode tcp
+        balance source# Load Balancing algorithm
+        reqadd X-Forwarded-Proto: http
+        server server1 192.168.10.100:443 weight 1 maxconn 512 check
+        server server2 192.168.10.101:443 weight 1 maxconn 512 check
+```

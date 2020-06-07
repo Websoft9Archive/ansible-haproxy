@@ -2,19 +2,14 @@
 
 You use the **SSH** to connect your Server and run the command `cat /credentials/password.txt` to get the username and password of this deployment solution.
 
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
+
 These accounts are required for HAProxy image installation and configuration
 
 ## HAProxy
 
 * HAProxy administrator username: `admin`
 * HAProxy administrator password: stored in the file of your server */credentials/password.txt*
-  > If there no password.txt exist, the administrator password is `admin`
-
-## MySQL
-
-* MySQL administrator username: `root`
-* MySQL administrator password: stored in the file of your server */credentials/password.txt*  
-  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
 
 ## Linux
 

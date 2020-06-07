@@ -11,7 +11,6 @@
 ## HAProxy 安装向导
 
 1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名:1080/haproxy* 或 *http://Internet IP:1080/haproxy*, 提示需要登录
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-login-websoft9.png)
 
 2. 输入账号密码（[不知道账号密码？](/zh/stack-accounts.md#haproxy)），成功登录到 Haproxy Statistics Report 后台  
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-statsgui-websoft9.png)

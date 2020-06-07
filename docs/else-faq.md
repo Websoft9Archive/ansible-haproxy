@@ -1,38 +1,27 @@
 # FAQ
 
-#### How can I enable the debug mode of HAProxy service?
+#### What kind of installation method is used in this deployment solution to install HAProxy?
 
-```
-systemctl stop haproxy-server
-haproxy-server console
-```
+yum or apt
 
-#### Can I reset password of HAProxy by command?
+#### Can I reset password of HAProxy?
 
-Yes, e.g `haproxyctl change_password  admin newpassword`
+Yes, modify the configuration file `/etc/haproxy/haproxy.cfg`
 
 #### If there is no domain name, can I deploy HAProxy?
 
-Yes, visit HAProxy by *http://Internet IP:8161*
-
-#### What is the password for the database root user?
-
-The password is stored in the server related file: `/credentials/password.txt`
+Yes
 
 #### Is there a web-base GUI database management tools?
 
-Yes, phpMyAdmin is on it, visit by *http://Internet IP/phpmyadmin*
-
-#### Is it possible to modify the source path of HAProxy?
-
-No
+Yes, HAProxy Statistics Report was enabled, you can visit it by URL: *http://Internet IP:1080/haproxy* 
 
 #### How to change the permissions of filesytem?
 
 Change owner(group) or permissions like below:
 
 ```shell
-chown -R apache.apache /data/wwwroot
+chown -R haproxy.haproxy /data/wwwroot
 find /data/wwwroot -type d -exec chmod 750 {} \;
 find /data/wwwroot -type f -exec chmod 640 {} \;
 ```

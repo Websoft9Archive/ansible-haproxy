@@ -26,4 +26,4 @@ yum update -y
 
 ## HAProxy Upgrade
 
-Refer to the official docs: [Upgrading HAProxy](https://www.haproxy.com/upgrade.html)
+If the version update by YUM/APT it not suitable for you, please use the [resource build installation](https://github.com/haproxy/haproxy/blob/master/INSTALL)to update HAProxy

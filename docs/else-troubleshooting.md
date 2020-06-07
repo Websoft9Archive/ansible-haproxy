@@ -6,18 +6,20 @@ We collect the most common troubleshooting of using HAProxy for your reference:
 
 #### How can I use the logs?
 
-You can find the keywords **Failed** or **error** from the logs directory: `/data/logs`
+You can find the keywords **Failed** or **error** from the logs directory: `/var/logs/haproxy.log`
 
 #### HAProxy service can't start?
 
-1. Use the debug mode of `haproxy-server console` and you can see the errors
-   ```
-   haproxy-server console
-   ```
-2. Search the keywords **Failed** or **error** from logs: */data/logs/haproxy-server*
+Insufficient disk space, insufficient memory, and configuration file errors can make service could not be started. It is recommended to first check through the commands.
 
-#### Error in Chrome when modify password?
+```shell
+# restart mongodb service
+systemctl status haproxy
+journalctl  -u haproxy
 
-This error is not attribute to HAProxy server, once you have upgraded you local Chrome, it solved
+# view disk space
+df -lh
 
-![chrome error of HAProxy](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-chromeerror-websoft9.png)
+# view memory rate
+free -lh
+```
