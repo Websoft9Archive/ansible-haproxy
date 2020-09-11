@@ -5,6 +5,27 @@
 
   vars_files:
     - vars/main.yml
+    
+  vars_prompt:
+    - name: 'haproxy_selection'
+      prompt: "Choose the HAProxy distribution: \n
+      1: HAProxy 1.7\n
+      2: HAProxy 1.8\n
+      3: HAProxy 2.0\n
+      4: HAProxy 2.1\n
+      5: HAProxy 2.2\n"
+      private: no
+      default: 1
+
+  vars:
+    haproxy_select:
+      '1': "1.7"
+      '2': "1.8"
+      '3': "2.0"
+      '4': "2.1"
+      '5': "2.2"
+
+    haproxy_version: "{{haproxy_select[haproxy_selection]}}"
 
   roles:
     - { role: role_common, tags: "role_common"}  
