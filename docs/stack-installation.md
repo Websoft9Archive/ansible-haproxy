@@ -10,7 +10,7 @@ If you have completed the HAProxy deployment on Cloud Platform, the following st
 
 ## HAProxy Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *http://DNS:1080* or *http://Internet IP:1080*
+1. Using local Chrome or Firefox to visit the URL *http://DNS:1080/haproxy* or *http://Internet IP:1080/haproxy*
 
 2. Input username and password([Don't known password?](/stack-accounts.md#haproxy)), go to **HAProxy Statistics Report** console
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/haproxy/haproxy-statsgui-websoft9.png)
