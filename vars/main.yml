@@ -6,3 +6,5 @@ init_application:
     service_before: haproxy.service
     config_paths: 
       - /etc/haproxy/haproxy.cfg
+    commands:
+      - sudo systemctl restart haproxy
