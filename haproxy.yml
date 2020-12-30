@@ -13,7 +13,8 @@
       2: HAProxy 1.8\n
       3: HAProxy 2.0\n
       4: HAProxy 2.1\n
-      5: HAProxy 2.2\n"
+      5: HAProxy 2.2\n
+      6: HAProxy 2.3\n"
       private: no
       default: 1
 
@@ -24,6 +25,7 @@
       '3': "2.0"
       '4': "2.1"
       '5': "2.2"
+      '5': "2.3"
 
     haproxy_version: "{{haproxy_select[haproxy_selection]}}"
 
