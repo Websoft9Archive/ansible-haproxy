@@ -1,13 +1,5 @@
 # CHANGELOG
 
-## To do
-
-## Logs
-
-
-### Bug Fixes
-
-### Features
-
-* 2020-03-21  模块化改写项目
-
+## Release v2.3-1 2020-12-30
+### Fixes and Enhancements
+- Support version2.3 #7
