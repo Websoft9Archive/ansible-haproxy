@@ -11,8 +11,8 @@
   "requirements_configure_url": "http://www.haproxy.org/#docs",
   "components": "HAProxy",
   "install_way": {
-    "en": "Compile isntallation for source",
-    "zh": "下载源码编译安装"
+    "en": "Compile isntallation for source(CentOS) & Package install(Ubuntu)",
+    "zh": "下载源码编译安装（CentOS） & 包安装（Ubuntu）"
   },
   "install_url": "http://www.haproxy.org/"
 }
