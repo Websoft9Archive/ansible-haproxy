@@ -54,7 +54,7 @@ wget -N https://ghproxy.com/https://raw.githubusercontent.com/Websoft9/ansible-l
 
 #### 本项目安装的是 HAProxy 最新版吗？
 
-本项目通过下载源码编译安装，请通过[官方URL](http://www.haproxy.org/)页面查看版本号。  
+本项目通过下载源码编译安装（CentOS） & 包安装（Ubuntu），请通过[官方URL](http://www.haproxy.org/)页面查看版本号。  
 我们会定期检查[Release版本](https://github.com/Websoft9/ansible-haproxy/releases)，更新并测试此项目，以保证用户可以顺利安装所需的HAProxy版本。 
  
 #### 命令脚本部署与镜像部署有什么区别？

@@ -62,7 +62,7 @@ This program provided by Websoft9 contains a series of software with separate co
 
 #### How to install and view the latest release?
 
-This repository install way is Compile isntallation for source, you can  view the version from [Official URL](http://www.haproxy.org/).  
+This repository install way is Compile isntallation for source(CentOS) & Package install(Ubuntu), you can  view the version from [Official URL](http://www.haproxy.org/).  
 We will check [Release version](https://github.com/Websoft9/ansible-haproxy/releases) regularly. Update and test this project to ensure that users can successfully install the required version of HAProxy.
 
 #### Can I run this repository on Ansible Tower? 
