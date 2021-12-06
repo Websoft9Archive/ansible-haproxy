@@ -15,7 +15,8 @@
       4: HAProxy 2.1\n
       5: HAProxy 2.2\n
       6: HAProxy 2.3(only support ubuntu20.04 and centos7)\n
-      7: HAProxy 2.4\n"
+      7: HAProxy 2.4"
+      8: HAProxy 2.5\n"
       private: no
       default: 1
 
@@ -28,7 +29,8 @@
       '5': "2.2"
       '6': "2.3"
       '7': "2.4"
-
+      '8': "2.5"
+      
     haproxy_version: "{{haproxy_select[haproxy_selection]}}"
 
   roles:
